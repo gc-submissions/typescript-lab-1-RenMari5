@@ -13,15 +13,19 @@ export function findNameOfTallestMountain(array: Mountain[]) {
   //   const tallestMountain = Math.max(array.height);
   //   const i = array.indexOf(tallestMountain);
   //   return array[i].name;
-  let maximum: number = array[0].height;
-  let tallestGuy: string = "";
-  for (let element of array) {
-    if (maximum < element.height) {
-      maximum = element.height;
-      tallestGuy = element.name;
+  if (array !== []) {
+    let maximum: number = array[0].height;
+    let tallestGuy: string = "";
+    for (let element of array) {
+      if (maximum < element.height) {
+        maximum = element.height;
+        tallestGuy = element.name;
+      }
     }
+    return tallestGuy;
+  } else {
+    return "";
   }
-  return tallestGuy;
 }
 
 const tallGuy = findNameOfTallestMountain(mountains);
